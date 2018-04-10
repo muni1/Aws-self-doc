@@ -1,0 +1,5 @@
+{ 
+  "AWS_REGION": "",
+  "STARTUP_SIGNUP_TABLE": "my-startup-signup-table",
+  "NEW_SIGNUP_TOPIC": "arn:aws:sns:us-west-1:058849441364:elasticbeanstalk"
+}
