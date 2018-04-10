@@ -1,0 +1,31 @@
+1. Ubuntu 14.04 OS preparation
+2. Openstack Devstack installation
+3. local.conf configuration for Devstack installation
+4. Working with Dash board Horizon
+5. Working wuth Keystone ( creation of Projects, users etc)
+6. working with Glance ( image creation ,registration)
+7. Working with Nova Compute - VM creation and Management
+8. Working with Cider: Volume /Snapshot creation and management
+9. Working with Neutron : Creating Multiple networks using SDN/Neutron
+10. Multi Node installation (Multiple Compute Node) and Live Migration Setup
+-----------------------------------------------------------------------------
+Bonus Topics:
+1. Installation of Openstack in Redhat Env
+2. Working with Neutron Load Balancer, Openstack SWIFT,HEAT and Ceilometer ( autoscaling in Openstack)
+-------------------------------------------------------------------------------
+
+
+
+1. Install a package called "git"
+2. You will create a group called stack
+  		   a user callsed stack with /opt/stack as the home folder and with shell access
+3. set password for the user stack
+4. You will define the IPAddress as STATIC , if you have forgotten the same during the Ubuntu installation
+5. edit the /etc/hosts file and update the ipaddress and Hostname of the machine
+6. download the Devstack installation repository from github
+	git clone https://github.com/openstack-dev/devstack.git
+7. You will make passwordless login for the user stack
+8. admin access/root access for the user stack , by editing /etc/sudoers file
+9. Prepare the openstack installation script (/opt/stack/devstack/local.conf)
+10. Make the nesscessry network setups
+11. run ./stack.sh
