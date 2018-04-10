@@ -1,0 +1,42 @@
+Prerequisites:
+
+1. Have an ami with an instance where apache starts during instance launch
+ 1. Lanch an instance (Amazon Linux or Ubuntu Linux)
+ 2. Install Apache in it
+ 3. add a line service apache2 start in /etc/rc.local  (Ubuntu ) 
+               service http start    in /etc/rc.local  (Amazon Linux )
+ 4. Create an AMI from that instance.
+
+2. You have to have a load balancer with no instances registered (e.g. mylb)
+
+3. You have to a notification with a valid email id registered.
+
+4. You have to have the APIs for Autoscaling and Cloud watch installed in a system
+
+5. You need to have Java ver 1.5 > installed 
+
+6. You need to have proper environment variables defined for working with Amazon AWS EC2.
+
+
+
+Sample Environment variable file
+
+SET AWS_AUTO_SCALING_URL=https://autoscaling.us-east-1a.amazonaws.com/
+SET AWS_CREDENTIAL_FILE="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\jpaacckeys\keys\cloudclass.pem"
+SET EC2_CERT="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\jpaacckeys\keys\cert-4ETED7NBVMEOCYDPBZFAZ54LJGWRDUM6.pem"
+SET EC2_PRIVATE_KEY="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\jpaacckeys\keys\pk-4ETED7NBVMEOCYDPBZFAZ54LJGWRDUM6.pem"
+set EC2_HOME="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4"
+PATH=%PATH%;H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\bin;H:\Program Files\Java\jdk1.7.0_11\bin;H:\000 CLOUD\AWS\AUTO_SCALING\AutoScaling-1.0.61.1\bin;H:\000 CLOUD\AWS\AUTO_SCALING\cloudwatch-cmd-line-tool\CloudWatch-1.0.13.4\bin
+SET AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxx
+SET AWS_SECRET_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4
+SET EC2_URL=https://ec2.us-east-1.amazonaws.com/
+SET EC2_REGION=us-east-1
+SET AWS_CREDENTIAL_FILE="H:\000 CLOUD\AWS\AUTO_SCALING\AutoScaling-1.0.61.1\auto-scale-credentials"
+SET AWS_AUTO_SCALING_HOME="H:\000 CLOUD\AWS\AUTO_SCALING\AutoScaling-1.0.61.1"
+SET AWS_CLOUDWATCH_HOME="H:\000 CLOUD\AWS\AUTO_SCALING\cloudwatch-cmd-line-tool\CloudWatch-1.0.13.4"
+
+file:auto-scale-credentials
+
+AWSAccessKeyId=xxxxxxxxxxxxxxxxxxxxxxx
+AWSSecretKey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
