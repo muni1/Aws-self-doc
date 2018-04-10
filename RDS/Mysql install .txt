@@ -1,0 +1,24 @@
+
+	1.	mysql
+    2  apt-get install mysql-common
+    3  apt-get update
+    4  mysql -u wordpress -p -h wordpress.czcimcwlr97w.us-west-1.rds.amazonaws.com
+    5  apt-get install mysql-client-core-5.6
+    6  mysql -u muni -p -h wordpress.czcimcwlr97w.us-west-1.rds.amazonaws.com
+    7  mysql -u wordpress -p muni1234 -h wordpress.czcimcwlr97w.us-west-1.rds.amazonaws.com
+
+
+
+RDS  amazonaws :::::wordpress.czcimcwlr97w.us-west-1.rds.amazonaws.com
+
+
+wordpress
+muni
+muni1234
+
+
+sql > use databasename;
+sql > create table tablename(id integer);
+sql > inser into tablename values (1);
+sql > select * from tablename;
+
