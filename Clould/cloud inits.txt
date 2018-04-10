@@ -1,0 +1,45 @@
+Public Cloud-Some hands-on tips:  [to be used in Amazon Instances]
+Type of OS      Default user to be used for login
+[Linux]               
+Amazon                    ec2-user
+Ubuntu                     ubuntu
+Redhat/Suse/Fedora    ec2-user/root
+
+Windows                   Administrator
+
+Install a new Apache Webserver software in a Linux [Ubuntu or Amazon Linux]
+
+Webserver[ Apache ]       Package name
+Amazon/redhat               httpd
+Ubuntu                          apache2
+
+Command to Install:
+Amazon/Redhat/Suse             yum install <software package name>
+Ubuntu                         apt-get install <software package name>
+
+e.g. apt-get install apache2
+sudo su
+yum install  httpd
+
+Amazon Linux: [Location for index.html and a Sample HTML code]
+nano     /var/www/html/index.html
+<html><body><h1> hello World </h1></body></html>
+
+ubuntu Linux: [Location for index.html]
+nano     /var/www/index.html
+To save a document in nano:
+Ctrl O , enter , Ctrl X
+
+To Start Apache:
+Amazon linux:       service httpd start     
+Ubuntu linux:       service apache2 start  
+
+
+
+Search for a <software package >
+Amazon/Redhat/Suse         yum search <hint>
+Ubuntu                            apt-cache search <hint>
+e.g.
+
+      apt-cache search apache | more
+      yum search apache          | more

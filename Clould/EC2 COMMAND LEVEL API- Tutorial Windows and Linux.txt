@@ -1,0 +1,39 @@
+USING EC2 COMMAND LEVEL API.   Please refer below and the attached documents.
+
+
+1. From a Windows Machine:
+
+Please find attached tutorials for using both Command level EC2 API 
+
+1.Command level API: [from a WINDOWS m/c]
+
+2. Sample environment variables
+SET AWS_CREDENTIAL_FILE="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\jpaacckeys\keys\cloudclass.pem"
+SET EC2_CERT="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\jpaacckeys\keys\cert-xxxx.pem"
+SET EC2_PRIVATE_KEY="H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\jpaacckeys\keys\pk-xxxxxxxxxxx6.pem"
+set EC2_HOME=H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4
+PATH=%PATH%;H:\000 CLOUD\EC2\cmd-line-tool\ec2-api-tools-1.6.4\bin;H:\Program Files\Java\jdk1.7.0_11\bin
+SET AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+SET AWS_SECRET_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+SET EC2_URL=https://ec2.us-east-1.amazonaws.com/
+SET EC2_REGION=us-east-1a
+
+and refer attached document.
+=======================================================================
+some sample command syntax s:
+ec2-run-instances  [AMIID]   -t[INSTANCE TYPE]  -Z [Avail.zone] -k [keypair] -g [Security group]
+ec2-describe-instances  [INSTANCE-ID]
+ec2-create-volume -s [SIZE in GIG]  -Z [Avail Zone]
+ec2-descrive-volumes [VOL ID]
+ec2-attach-volume [VOL ID] -i [INS ID] -d [DEVICE]
+ec2-detach-volume [VOL ID]
+ec2-create-snapshot [VOL ID]
+ec2-create-keypair [your-keypair-name]  > your-keypair-name.pem
+ec2-create-group   [sec-group-name] -d "description"
+ec2-authorize  [sec group name]  -P Protocol   -p port -s subnet
+
+
+2. From a Linux Machine:
+Refer attached word document
+
+
