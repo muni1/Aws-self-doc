@@ -1,0 +1,36 @@
+#install Below packages:
+sudo aptitude install build-essential libcurl4-openssl-dev libxml2-dev libfuse-dev comerr-dev libfuse2 libidn11-dev
+libkadm55 libkrb5-dev libldap2-dev libselinux1-dev libsepol1-dev pkg-config fuse-utils sshfs
+
+#run as roor:
+Download the s3fs source(Revision 177 as of this writing) from the Google Code project:
+wget http://s3fs.googlecode.com/files/s3fs-1.63.tar.gz
+
+#untar and install the s3fs binary:
+tar xzf s3fs-1.63.tar.gz
+
+cd s3fs-1.63
+
+#compile and install
+./configure && make && sudo make install
+
+#In order to use the allow_other option(see below) you will need to modify the fuse configuration:
+sudo nano /etc/fuse.conf
+
+And uncomment the following line in the conf file:
+....
+#user_allow_other
+
+#Save and exit from nano
+
+#Now you can mount an s3 bucket like this:
+sudo mkdir -p /mnt/s3
+nano /etc/passwd-s3fs put your access-key and secret-key[accesskey:secretkey]
+chmod 0600 /etc/passwd-s3fs
+s3fs bucket -o use_cache=/tmp -o allow_other    /mnt/s3
+
+Now any files written to /mnt/s3 will be replicated to your Amazon s3 bucket.
+
+
+
+

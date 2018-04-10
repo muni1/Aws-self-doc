@@ -1,0 +1,29 @@
+#install Below Packages
+sudo aptitude install build-essential libcurl4-openssl-dev libxml2-dev libfuse-dev comerr-dev libfuse2 libidn11-dev libkadam55 libkrb5-dev libldap2-dev libselinux1-dev libsepol1-dev pkg-config fuse-utils sshfs
+
+#run as root
+
+Download the s3fs source(Revision 177 as of this writing)from the Google code project:
+wget http://s3fs.googlecode.com/files/s3fs-1.63.tar.gz
+
+#untar xzvf s3fs-1.63.tar.gz
+
+tar xzvf s3fs-1.63.tar.gz
+
+cd s3fs-1.63
+
+#compile and install
+./configure&&make&&sudo make install
+
+#in order to use the allow_other option(see below)you will need to modify the fuse configuration
+ 
+ sudo nano /etc/fuse.config
+ 
+ And uncomment the following line in the conf file:
+ 
+ #user_allow_other
+ 
+ #save and exit from nano
+ 
+ #Now you can mount an S3 bucket like this:
+ sudo mkdir -p/mnt/s3fs
